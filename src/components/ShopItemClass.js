@@ -5,12 +5,13 @@ import ItemModel from "../models/ItemModel";
 export default class ShopItemClass extends React.Component {
 
   static propTypes = {
-    //item: PropTypes.instanceOf(ItemModel).isRequired  not working
-    item: PropTypes.object.isRequired // Working
+    item: PropTypes.instanceOf(ItemModel).isRequired  //not working
+    //item: PropTypes.object.isRequired // Working
   }
 
   render () {
     const {item} = this.props;
+    console.log(this.props)
     return (
       <div className="main-content">
         <h2>{item.brand}</h2>

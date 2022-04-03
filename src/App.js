@@ -1,4 +1,6 @@
 import ShopItemClass from './components/ShopItemClass'
+
+import ItemModel from "./models/ItemModel";
 import './App.css';
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
     currency: '£'
   }
 
+  const itemClass = new ItemModel(item.brand, item.title, item.description, item.descriptionFull, item.price, item.currency)
+
 // Внутри компонента App
   return (
     <div className="container">
@@ -20,7 +24,7 @@ function App() {
         <div className='highlight-overlay'></div>
       </div>
       <div className="window">
-        <ShopItemClass item={item} />
+        <ShopItemClass item={itemClass} />
       </div>
     </div>
   )
